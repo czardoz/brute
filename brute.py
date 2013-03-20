@@ -18,6 +18,13 @@ def main():
     args = parser.parse_args()
     logger = logging.getLogger("default")
 
+    # Default file names
+    if args.usrslst is None:
+        args.usrslst = 'users.lst'
+    if args.passlst is None:
+        args.passlst = 'pass.lst'
+
+
     for user in open(args.usrslst):
         #remove newline character
         user = user[:-1]
